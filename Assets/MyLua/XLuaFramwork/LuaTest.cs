@@ -19,7 +19,8 @@ namespace guoShuai.Lua
         {
             // LuaHelper.Instance.LoadUIScene("UIPrefab/UIRootView");
             //transform.GetComponent<typeof>().onClick.AddListener();
-
+           //transform.GetComponent<UnityEngine.RectTransform>().offsetMin = UnityEngine.Vector2.zero;
+           
 
         }
 

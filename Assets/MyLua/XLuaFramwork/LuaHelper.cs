@@ -47,6 +47,7 @@ namespace guoShuai.Lua
             if (obj != null)
             {
                 GameObject oo = GameObject.Instantiate(obj);
+                oo.name = oo.name.Split('(')[0];
                 if (onCreate != null)
                 {
                     if (oo.GetComponent<LuaViewBehaviour>() == null)
@@ -58,5 +59,14 @@ namespace guoShuai.Lua
             }
             return null;
         }
+
+        public GameObject LoadUIItem(string path)
+        {
+            GameObject obj = Resources.Load<GameObject>(path); //这里仅做测试,加载AB包应用异步方式去实现
+            return obj;
+        }
+       
     }
 }
+
+ 

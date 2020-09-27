@@ -21,9 +21,10 @@ namespace XLua.CSObjectWrap
         {
 			ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
 			System.Type type = typeof(guoShuai.Lua.LuaHelper);
-			Utils.BeginObjectRegister(type, L, translator, 0, 1, 0, 0);
+			Utils.BeginObjectRegister(type, L, translator, 0, 2, 0, 0);
 			
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "LoadUIScene", _m_LoadUIScene);
+			Utils.RegisterFunc(L, Utils.METHOD_IDX, "LoadUIItem", _m_LoadUIItem);
 			
 			
 			
@@ -115,6 +116,35 @@ namespace XLua.CSObjectWrap
             }
             
             return LuaAPI.luaL_error(L, "invalid arguments to guoShuai.Lua.LuaHelper.LoadUIScene!");
+            
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _m_LoadUIItem(RealStatePtr L)
+        {
+		    try {
+            
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+            
+            
+                guoShuai.Lua.LuaHelper gen_to_be_invoked = (guoShuai.Lua.LuaHelper)translator.FastGetCSObj(L, 1);
+            
+            
+                
+                {
+                    string _path = LuaAPI.lua_tostring(L, 2);
+                    
+                        var gen_ret = gen_to_be_invoked.LoadUIItem( _path );
+                        translator.Push(L, gen_ret);
+                    
+                    
+                    
+                    return 1;
+                }
+                
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
             
         }
         

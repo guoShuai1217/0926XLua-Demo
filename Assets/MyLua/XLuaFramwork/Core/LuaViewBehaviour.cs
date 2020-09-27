@@ -60,9 +60,7 @@ namespace guoShuai.Lua
             meta.Set("__index", luaEnv.Global);
             scriptEnv.SetMetaTable(meta);
             meta.Dispose();
-
-            gameObject.name.Replace("(Clone)","");
-
+ 
             string prefabName = name;
             if (prefabName.Contains("(Clone)"))
             {

@@ -4,6 +4,8 @@ local this = UIRootView;
 local transform;
 local gameObject;
 
+
+
 -- awake
 function UIRootView.awake(obj)
     gameObject = obj ;
@@ -18,11 +20,11 @@ function UIRootView.InitView()
 
     print(string.format("获取 %s 组件","UIRootView"));
 
-    local uiroot = transform:Find("Canvas/UIRoot").transform;
-    this.btn_Login = uiroot:Find("btn_Login"):GetComponent("UnityEngine.UI.Button");
-    this.btn_Regist = uiroot:Find("btn_Regist"):GetComponent("UnityEngine.UI.Button");
-    this.input_Account = uiroot:Find("input_Account"):GetComponent("UnityEngine.UI.InputField");
-    this.input_Password = uiroot:Find("input_Password"):GetComponent("UnityEngine.UI.InputField");
+    this.UIRoot = transform:Find("Canvas/UIRoot").transform;
+    this.btn_Login = this.UIRoot:Find("LoginPage/btn_Login"):GetComponent("UnityEngine.UI.Button");
+    this.btn_Regist = this.UIRoot:Find("LoginPage/btn_Regist"):GetComponent("UnityEngine.UI.Button");
+    this.input_Account = this.UIRoot:Find("LoginPage/input_Account"):GetComponent("UnityEngine.UI.InputField");
+    this.input_Password = this.UIRoot:Find("LoginPage/input_Password"):GetComponent("UnityEngine.UI.InputField");
    
 end
 
