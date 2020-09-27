@@ -1,0 +1,13 @@
+
+
+ 
+xlua.hotfix(CS.ShowHotfix, 'ShowFix', function(self)
+--local tmp = CS.UnityEngine.GameObject.Find('Cube')
+--local tra = tmp:GetComponent(typeof(CS.UnityEngine.Transform))
+--tra:Rotate(CS.UnityEngine.Vector3.up * CS.UnityEngine.Time.deltaTime * 30)
+
+ self.cube:Rotate(CS.UnityEngine.Vector3.up * CS.UnityEngine.Time.deltaTime * 30)
+ self.txt.text = '我热更新了'
+end)
+ 
+
